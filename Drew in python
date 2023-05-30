@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+#data for the graph
+x_values =[1,3,5]
+y_values =[1,3,5]
+#plot the graph
+plt.plot(x_values,y_values)
+#add labels and title
+plt.xlabel('X_axis label')
+plt.ylabel('Y_axis label')
+plt.title('linear graph')
+#show the graph
+plt.show()
