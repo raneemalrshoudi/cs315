@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int linear_search(int arr[], int t, int r) {
+    int i;
+    for (i = 0; i < t; i++) {
+        if (arr[i] == r) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    int n, i, x, pos;
+    double worst_case, best_case, avg_case;
+    clock_t start, end;
+
+     int arr[] = {10,30,50};
+    int r = 10;
+    int t = sizeof(arr) / sizeof(arr[0]);
+
+    // Function call
+    int result = linear_search(arr, t, r);
+    (result == -1)
+         ? printf("Element is not present in array")
+        : printf("Element is present at index %d\n", result);
+
+    // measure worst case time complexity
+    start = clock();
+    pos = linear_search(arr, n, 101); // element not present in array
+    end = clock();
+    worst_case = (double)(end - start) / CLOCKS_PER_SEC * 1000;
+
+    // measure best case time complexity
+    start = clock();
+    pos =linear_search(arr, n, arr[0]); // element at first index
+    end = clock();
+    best_case = (double)(end - start) / CLOCKS_PER_SEC * 1000;
+
+    // measure average case time complexity
+    start = clock();
+    pos = linear_search(arr, n, x);
+    end = clock();
+    avg_case = (double)(end - start) / CLOCKS_PER_SEC * 1000;
+
+    
+    
+
+    printf("Worst case time complexity: %f ms\n", worst_case);
+    printf("Best case time complexity: %f ms\n", best_case);
+    printf("Average case time complexity: %f ms\n", avg_case);
+
+    return 0;
+}
